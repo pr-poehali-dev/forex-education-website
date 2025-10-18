@@ -257,18 +257,38 @@ const Index = () => {
         </section>
 
         <section className="py-20 px-6">
-          <div className="container mx-auto max-w-4xl">
-            <Card className="border-border/50 bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 backdrop-blur-sm overflow-hidden relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20 animate-gradient-shift bg-[length:200%_auto]"></div>
-              <CardContent className="p-12 text-center relative z-10">
-                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary via-secondary to-accent mx-auto mb-6 flex items-center justify-center animate-pulse-glow">
+          <div className="container mx-auto max-w-6xl">
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div className="relative rounded-2xl overflow-hidden border border-border/50 bg-card/50 backdrop-blur-sm group">
+                <div className="aspect-video bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center relative overflow-hidden">
+                  <video 
+                    className="w-full h-full object-cover"
+                    autoPlay 
+                    loop 
+                    muted 
+                    playsInline
+                  >
+                    <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4" />
+                  </video>
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="w-16 h-16 rounded-full bg-primary/90 flex items-center justify-center">
+                      <Icon name="Play" className="text-white ml-1" size={32} />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="text-left">
+                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary via-secondary to-accent mb-6 flex items-center justify-center animate-pulse-glow">
                   <Icon name="Rocket" className="text-white" size={40} />
                 </div>
-                <h3 className="text-3xl font-bold mb-4">Готовы начать свой путь трейдера?</h3>
-                <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+                <h3 className="text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                  Готовы начать свой путь трейдера?
+                </h3>
+                <p className="text-lg text-muted-foreground mb-8">
                   Присоединяйтесь к тысячам успешных студентов и получите доступ ко всем курсам и стратегиям
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <div className="flex flex-col sm:flex-row gap-4">
                   <Button size="lg" className="bg-gradient-to-r from-primary via-secondary to-accent hover:opacity-90 transition-all duration-300 hover:scale-105">
                     <Icon name="Sparkles" className="mr-2" size={20} />
                     Получить доступ
@@ -278,8 +298,8 @@ const Index = () => {
                     Связаться с нами
                   </Button>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           </div>
         </section>
 
